@@ -1,2 +1,2 @@
-# {{cookiecutter.work_theme}}
-# dadyarri 2021
+# {{cookiecutter.theme}}
+# dadyarri {{cookiecutter.year}}
