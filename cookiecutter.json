@@ -3,5 +3,7 @@
     "file_name": "main",
     "year": "{% now 'utc', '%Y' %}",
     "subject": "",
-    "theme": ""
+    "theme": "",
+    "author": "",
+    "teacher": ""
 }
