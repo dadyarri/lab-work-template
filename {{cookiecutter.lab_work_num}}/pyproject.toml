@@ -2,7 +2,7 @@
 name = "labwork{{cookiecutter.lab_work_num}}"
 version = "0.1.0"
 description = ""
-authors = ["Daniil <dadyarri@gmail.com>"]
+authors = ["{{cookiecutter.author}}"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
