@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "labwork{{cookiecutter.lab_work_num}}"
+version = "0.1.0"
+description = ""
+authors = ["Daniil <dadyarri@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.7.4"
+pytest = "^6.2.3"
+pyexpect = "^1.0.21"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
