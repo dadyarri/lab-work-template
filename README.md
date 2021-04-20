@@ -5,13 +5,12 @@
 ## Требования
 
 - cookiecutter
-    `pip install cookiecutter`
 
 - docxtpl
-    `pip install docxtpl`
 
 - poetry
-    `pip install poetry`
+
+`pip install cookiecutter docxtpl poetry`
 
 ## Настройка
 
