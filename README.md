@@ -16,7 +16,22 @@
 
 `cookiecutter gh:dadyarri/lab-work-template`
 
-## Синтакис шаблона (генерация отчёта)
+## Синтакис шаблона
 
 Цель работы и вывода:
     Находятся в начале сгенерированного файла, заключены между тегами Goal/EndGoal для цели и Summary/EndSummary для вывода
+
+## Генерация отчёта
+
+### Linux
+
+`make insert`
+
+
+### Windows
+
+Для работы со скриптами make на Windows, нужно [установить](https://chocolatey.org/install) chocolatey
+
+`choco install make`
+
+`make insert`
