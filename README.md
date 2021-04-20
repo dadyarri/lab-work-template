@@ -21,22 +21,31 @@
 Цель работы и вывода:
     Находятся в начале сгенерированного файла, заключены между тегами Goal/EndGoal для цели и Summary/EndSummary для вывода
 
-## Генерация отчёта
+## Скрипты
 
-### Linux
+### Требования
 
-`make insert`
+#### Linux
 
+`sudo apt install make` - Debian  
+`sudo pacman -S base-devel` - Arch
 
-### Windows
+#### Windows
 
 Для работы со скриптами make на Windows, нужно [установить](https://chocolatey.org/install) chocolatey
 
 `choco install make`
 
+
+### Генерация отчёта
+
+Подстановка в Word-файл переменных, заданных на этапе создания шаблона, сбор цели работы, вывода из исходного кода и вставка в отчёт
+
 `make insert`
 
 
-## Тестирование кода
+### Тестирование кода
+
+Запуск юнит-тестов написанных с помощью pytest
 
 `make tests`
