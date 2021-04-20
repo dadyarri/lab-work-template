@@ -1,11 +1,13 @@
 import re
 from pathlib import Path
 
-from docxtpl import DocxTemplate
+from docxtpl import DocxTemplate, InlineImage
+from PIL import Image, ImageDraw, ImageFont
 
 
 template = DocxTemplate(Path("report{{cookiecutter.lab_work_num}}.docx"))
 source_code = Path("{{cookiecutter.file_name}}.py").open().readlines()
+test_results = Path("tests.txt").open().readlines()
 
 goal = re.search(
     r"(?<=\"\"\"\nGoal:\n)[\S\s]+(?=EndGoal)",
@@ -22,6 +24,12 @@ code = re.search(
     "".join(source_code)
 ).group(1)
 
+img = Image.new("RGB", (500, len(test_results) * 20), color="#232627")
+canvas = ImageDraw.Draw(img)
+font = ImageFont.truetype("font.ttf", size=9)
+canvas.text((10, 10), "".join(test_results), font=font, fill="#FFFFFF")
+img.save("tests.png")
+
 context = {
     "number": "{{cookiecutter.lab_work_num}}",
     "subject": "{{cookiecutter.subject}}",
@@ -31,7 +39,8 @@ context = {
     "year": "{{cookiecutter.year}}",
     "goal": goal.strip(),
     "summary": summary.strip(),
-    "source": code.strip()
+    "source": code.strip(),
+    "testing": InlineImage(template, "tests.png"),
 }
 
 template.render(context)
