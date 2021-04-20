@@ -35,3 +35,8 @@
 `choco install make`
 
 `make insert`
+
+
+## Тестирование кода
+
+`make tests`
