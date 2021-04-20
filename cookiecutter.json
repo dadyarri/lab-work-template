@@ -1,4 +1,5 @@
 {
     "lab_work_num": "",
-    "file_name": "main"
+    "file_name": "main",
+    "year": "{% now 'utc', '%Y' %}"
 }
