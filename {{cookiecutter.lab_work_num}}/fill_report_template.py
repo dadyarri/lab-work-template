@@ -37,7 +37,7 @@ context = {
     "author": "{{cookiecutter.author}}",
     "teacher": "{{cookiecutter.teacher}}",
     "year": "{{cookiecutter.year}}",
-    "university": "{{cookiecutter.university}}",
+    "university": """{{cookiecutter.university}}""",
     "cathedra": "{{cookiecutter.cathedra}}",
     "group": "{{cookiecutter.group}}",
     "city": "{{cookiecutter.city}}",
