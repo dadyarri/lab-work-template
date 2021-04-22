@@ -5,7 +5,7 @@ from docxtpl import DocxTemplate, InlineImage
 from PIL import Image, ImageDraw, ImageFont
 
 
-template = DocxTemplate(Path("report{{cookiecutter.lab_work_num}}.docx"))
+template = DocxTemplate(Path("template.docx"))
 source_code = Path("{{cookiecutter.file_name}}.py").open().readlines()
 test_results = Path("tests.txt").open().readlines()
 
