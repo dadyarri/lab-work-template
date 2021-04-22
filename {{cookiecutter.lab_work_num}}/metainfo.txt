@@ -1,0 +1,7 @@
+Goal:
+    цель работы
+EndGoal
+
+Summary:
+    вывод
+EndSummary

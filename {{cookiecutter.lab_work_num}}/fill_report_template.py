@@ -8,15 +8,16 @@ from PIL import Image, ImageDraw, ImageFont
 template = DocxTemplate(Path("template.docx"))
 source_code = Path("{{cookiecutter.file_name}}.py").open().readlines()
 test_results = Path("tests.txt").open().readlines()
+meta = Path("metainfo.txt").open().readlines()
 
 goal = re.search(
-    r"(?<=\"\"\"\nGoal:\n)[\S\s]+(?=EndGoal)",
-    "".join(source_code),
+    r"(?<=Goal:\n)[\S\s]+(?=EndGoal)",
+    "".join(meta),
 ).group(0)
 
 summary = re.search(
-    r"(?<=Summary:\n)[\S\s]+(?=EndSummary\n\"\"\")",
-    "".join(source_code),
+    r"(?<=Summary:\n)[\S\s]+(?=EndSummary)",
+    "".join(meta),
 ).group(0)
 
 code = re.search(
