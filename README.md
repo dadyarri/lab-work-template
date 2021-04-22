@@ -10,32 +10,33 @@
 
 - poetry
 
+- git
+
+- make
+
 `pip install cookiecutter docxtpl poetry`
+
+### Linux
+
+`sudo apt install make` - Debian  
+`sudo pacman -S --needed base-devel git` - Arch
+
+### Windows
+
+Необходима утилита для установки сторонних пакетов: [chocolatey](https://chocolatey.org/install)
+
+`choco install make git`
 
 ## Настройка
 
 `cookiecutter gh:dadyarri/lab-work-template`
 
-## Синтакис шаблона
+## Синтаксис шаблона
 
 Цель работы и вывода:
-    Находятся в начале сгенерированного файла, заключены между тегами Goal/EndGoal для цели и Summary/EndSummary для вывода
+    Находятся в начале сгенерированного файла, заключены между тегами Goal/EndGoal для цели и Summary/EndSummary для вывода (пример в генерируемом скрипте)
 
 ## Скрипты
-
-### Требования
-
-#### Linux
-
-`sudo apt install make` - Debian  
-`sudo pacman -S base-devel` - Arch
-
-#### Windows
-
-Для работы со скриптами make на Windows, нужно [установить](https://chocolatey.org/install) chocolatey
-
-`choco install make`
-
 
 ### Генерация отчёта
 
