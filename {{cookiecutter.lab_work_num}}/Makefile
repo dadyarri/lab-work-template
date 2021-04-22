@@ -1,6 +1,6 @@
 .PHONY: insert
 insert:
-	tests
+	make tests
 	python fill_report_template.py
 ifeq ($(OS),Windows_NT)
 	del /S tests.*
