@@ -1,3 +1,4 @@
+import pprint
 import re
 from pathlib import Path
 
@@ -6,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 template = DocxTemplate(Path("template.docx"))
-source_code = Path("{{cookiecutter.file_name}}.py").open().readlines()
+source_codes = Path(".").glob("*.py")
 test_results = Path("tests.txt").open().readlines()
 meta = Path("metainfo.txt").open().readlines()
 
@@ -19,11 +20,6 @@ summary = re.search(
     r"(?<=Summary:\n)[\S\s]+(?=EndSummary)",
     "".join(meta),
 ).group(0)
-
-code = re.search(
-    r"\"\"\"\n\n\n([\s\S]*)",
-    "".join(source_code)
-).group(1)
 
 img = Image.new("RGB", (500, len(test_results) * 20), color="#232627")
 canvas = ImageDraw.Draw(img)
@@ -44,9 +40,22 @@ context = {
     "city": "{{cookiecutter.city}}",
     "goal": goal.strip(),
     "summary": summary.strip(),
-    "source": code.strip(),
     "testing": InlineImage(template, "tests.png"),
+    "tasks": [],
 }
+
+for source_code in source_codes:
+    if source_code.name != "fill_report_template.py":
+        code = "".join(source_code.open().readlines())
+        context["tasks"].append(
+            {
+                "name": re.search(
+                    r"(?<=# Task: ).+",
+                    code,
+                ).group(0),
+                "source": re.search(r"# Task:.+\n*([\s\S]*)", code).group(1),
+            }
+        )
 
 template.render(context)
 template.save(Path("report{{cookiecutter.lab_work_num}}.docx"))
