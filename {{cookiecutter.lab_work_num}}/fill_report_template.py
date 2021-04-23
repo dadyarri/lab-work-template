@@ -57,5 +57,5 @@ for source_code in source_codes:
             }
         )
 
-template.render(context)
+template.render(context, autoescape=True)
 template.save(Path("report{{cookiecutter.lab_work_num}}.docx"))
