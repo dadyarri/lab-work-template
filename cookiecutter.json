@@ -10,5 +10,5 @@
     "cathedra": "Кафедра информационных систем и программной инженерии",
     "group": "ИСТ-120",
     "city": "Владимир",
-    "_extensions": ["extensions.to_camel.StrcaseExtension"]
+    "_extensions": ["extensions.to_camel.ToCamelCaseExtension"]
 }
