@@ -1,4 +1,4 @@
 import pytest
 
-class Test{{cookiecutter.file_name.capitalize()}}:
+class Test{{ cookiecutter.file_name|to_camel }}:
     pass
