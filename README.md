@@ -14,7 +14,7 @@
 
 - make
 
-`pip install cookiecutter docxtpl poetry`
+`pip install git+https://github.com/cookiecutter/cookiecutter docxtpl poetry`
 
 ### Linux
 
@@ -25,7 +25,7 @@
 
 Необходима утилита для установки сторонних пакетов: [chocolatey](https://chocolatey.org/install)
 
-`choco install make git`
+`choco install make git python`
 
 ## Настройка
 
@@ -34,7 +34,7 @@
 ## Синтаксис шаблона
 
 Цель работы и вывод:
-    Находятся в начале сгенерированного файла, заключены между тегами Goal/EndGoal для цели и Summary/EndSummary для вывода (пример в генерируемом скрипте)
+    Находятся в файле metainfo.txt, заключены между тегами Goal/EndGoal для цели и Summary/EndSummary для вывода (пример в генерируемом скрипте)
 
 ## Скрипты
 
